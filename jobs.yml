@@ -1,0 +1,14 @@
+# PM2 ecosystem config – run after: npm run build
+# Start: pm2 start jobs.yml
+# Stop:  pm2 stop 99tech-app
+
+apps:
+  - name: 99tech-app
+    script: npm
+    args: run preview:3099
+    cwd: ./
+    instances: 1
+    autorestart: true
+    watch: false
+    env:
+      NODE_ENV: production
