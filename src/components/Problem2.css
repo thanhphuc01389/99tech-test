@@ -1,0 +1,193 @@
+/* Problem 2 – Fancy Form (Swap) */
+:root {
+  --p2-bg: #0d0d12;
+  --p2-card: #16161d;
+  --p2-border: #2a2a35;
+  --p2-text: #e8e8ed;
+  --p2-muted: #8a8a9a;
+  --p2-primary: #6366f1;
+  --p2-primary-hover: #818cf8;
+  --p2-glow: rgba(99, 102, 241, 0.25);
+  --p2-success: #22c55e;
+  --p2-error: #ef4444;
+  --p2-radius: 14px;
+  --p2-radius-sm: 10px;
+  --p2-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.problem2-card {
+  max-width: 420px;
+  background: var(--p2-card);
+  border: 1px solid var(--p2-border);
+  border-radius: var(--p2-radius);
+  padding: 28px;
+  box-shadow: var(--p2-shadow);
+  position: relative;
+}
+
+.problem2-title {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.problem2-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.problem2-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.problem2-field + .problem2-field {
+  margin-top: 4px;
+}
+
+.problem2-field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--p2-muted);
+}
+
+.problem2-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--p2-bg);
+  border: 1px solid var(--p2-border);
+  border-radius: var(--p2-radius-sm);
+  padding: 14px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.problem2-input-wrap:focus-within {
+  border-color: var(--p2-primary);
+  box-shadow: 0 0 0 3px var(--p2-glow);
+}
+
+.problem2-input-wrap input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  color: var(--p2-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.problem2-input-wrap input::placeholder {
+  color: var(--p2-muted);
+  opacity: 0.7;
+}
+
+.problem2-input-wrap input[readonly] {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.problem2-unit {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--p2-muted);
+}
+
+.problem2-hint {
+  font-size: 0.75rem;
+  min-height: 1.2em;
+}
+
+.problem2-hint.error {
+  color: var(--p2-error);
+}
+
+.problem2-btn-swap {
+  align-self: center;
+  margin: -4px 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--p2-border);
+  border: 1px solid var(--p2-border);
+  border-radius: 50%;
+  color: var(--p2-text);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.problem2-btn-swap:hover {
+  background: var(--p2-primary);
+  border-color: var(--p2-primary);
+  color: white;
+}
+
+.problem2-btn-swap:active {
+  transform: scale(0.95);
+}
+
+.problem2-rate {
+  margin-top: 12px;
+  font-size: 0.8125rem;
+  color: var(--p2-muted);
+}
+
+.problem2-btn-confirm {
+  margin-top: 24px;
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--p2-primary);
+  border: none;
+  border-radius: var(--p2-radius-sm);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.02s;
+}
+
+.problem2-btn-confirm:hover:not(:disabled) {
+  background: var(--p2-primary-hover);
+}
+
+.problem2-btn-confirm:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.problem2-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: 12px 20px;
+  border-radius: var(--p2-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--p2-shadow);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 100;
+}
+
+.problem2-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.problem2-toast.success {
+  background: var(--p2-success);
+  color: white;
+}
+
+.problem2-toast.error {
+  background: var(--p2-error);
+  color: white;
+}

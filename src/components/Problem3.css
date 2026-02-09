@@ -1,0 +1,181 @@
+/* Problem 3 – Review + Todo */
+.p3-review {
+  margin-bottom: 24px;
+}
+
+.p3-h3 {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.p3-h3:first-child {
+  margin-top: 0;
+}
+
+.p3-issues {
+  margin: 0 0 8px;
+  padding-left: 1.35em;
+  line-height: 1.55;
+}
+
+.p3-issues li {
+  margin-bottom: 14px;
+}
+
+.p3-issues code {
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+.p3-fix {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: var(--bg);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.p3-fix code {
+  background: transparent;
+  padding: 0;
+}
+
+.p3-code {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.p3-code code {
+  background: none;
+  padding: 0;
+  color: var(--text);
+}
+
+.p3-summary {
+  margin: 0 0 20px;
+  padding-left: 1.25em;
+  line-height: 1.55;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.p3-summary code {
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+/* Todo (live) */
+.p3-todo {
+  max-width: 420px;
+}
+
+.p3-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.p3-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.p3-input::placeholder {
+  color: var(--text-muted);
+}
+
+.p3-add {
+  padding: 10px 18px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.p3-add:hover {
+  background: var(--primary-hover);
+}
+
+.p3-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.p3-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.p3-item.done .p3-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.p3-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.p3-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.p3-text {
+  font-size: 0.9375rem;
+}
+
+.p3-remove {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.p3-remove:hover {
+  color: var(--text);
+  background: var(--border);
+}
